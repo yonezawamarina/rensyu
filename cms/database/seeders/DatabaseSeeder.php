@@ -23,5 +23,14 @@ class DatabaseSeeder extends Seeder
          $this->call([
               DogfoodSeeder::class,
             ]);
+            
+            $this->call([
+              ChartjsSeeder::class,
+            ]);
+    
+    
+            
+            
+    
     }
 }

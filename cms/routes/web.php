@@ -2,6 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\CalculateController;
+use App\Http\Controllers\PostTestController;
+
+// use App\Http\Controllers\DogfoodController;
+
+// use App\Models\Dogfood;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +20,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+// チャートデータ取得処理
+
+Route::get('/chartjs', function () {
+    return view('chartjs');
+});
+Route::get('/chartjs', function () {
+    return view('chartjs');
+});
+
+// Route::get('/chartjs', function () {
+//     return view('chartjs');
+// });
+
+// Route::get('/calculate', 'CalculateController@getcalc');
+// Route::get('/calculate', [CalculateController::class, 'getcalc'])->name('calculate.getcalc');
+
+
+
+Route::get('/inputForm',[PostTestController::class,'inputForm'])->name('post.inputform');
+Route::post('/formPost',[PostTestController::class,'formPost'])->name('post.formpost');
+
+
+// Route::get('/inputForm', function () {
+//     return view('inputForm');
+// });
+
+
+
+Route::get('/calculate', function () {
+    return view('calculate/num');
+});
 
 Route::get('/', function () {
     return view('welcome');
